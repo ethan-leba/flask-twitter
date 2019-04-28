@@ -1,0 +1,16 @@
+{% extends "base.html.j2" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    {% if current_user.is_authenticated %}
+    <h1>Hello, {{ current_user.username }}</h1>
+    <p>Pleased to meet you!</p>
+    {% else %}
+    <p>Happy to see you again!</p>
+    {% endif %}
+</div>
+{{ render_tweet(tweets) }}
+{% endblock %}

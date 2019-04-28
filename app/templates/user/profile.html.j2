@@ -1,0 +1,9 @@
+{% extends "base.html.j2" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+<h1> hey, {{ user.username }}</h1>
+{{ render_tweet(tweets) }}
+{% endblock %}

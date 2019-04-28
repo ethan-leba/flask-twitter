@@ -1,0 +1,9 @@
+{% extends "user/profile.html.j2" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+{{ super() }}
+{{ wtf.quick_form(tweetform) }}
+{% endblock %}

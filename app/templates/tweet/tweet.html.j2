@@ -1,0 +1,12 @@
+{% extends "base.html.j2" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+<h1> {{ tweet['tweet'].message }}</h1>
+{% for comment in comments %}
+  <p> <b>{{comment.User.username}}</b> says {{comment.Comment.message}} </p>
+{% endfor %}
+{{ wtf.quick_form(commentform) }}
+{% endblock %}
